@@ -3,6 +3,11 @@ package com.qa;
 public class CowSay {
 
     public static String cowSay(String message) {
+        // Handle empty message
+        if (message == null || message.trim().isEmpty()) {
+            message = "No message";
+        }
+
         // Split the message into lines (for multiline messages)
         String[] lines = message.split("\n");
 
@@ -12,13 +17,15 @@ public class CowSay {
             maxLength = Math.max(maxLength, line.length());
         }
 
+        // Add padding
+        maxLength += 2; // for space in the box
+
         // Create the top border of the box
         StringBuilder result = new StringBuilder();
         result.append(" _______\n");
 
         // Create the message lines in the box
         for (String line : lines) {
-            // Center the text and create the box line
             String paddedLine = String.format("< %-" + maxLength + "s >", line);
             result.append(paddedLine + "\n");
         }
