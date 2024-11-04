@@ -5,7 +5,7 @@ public class CowSay {
     public static String cowSay(String message) {
         // Handle empty message
         if (message == null || message.trim().isEmpty()) {
-            message = "No message";
+            message = "";
         }
 
         // Split the message into lines (for multiline messages)
@@ -26,7 +26,7 @@ public class CowSay {
 
         // Create the message lines in the box
         for (String line : lines) {
-            String paddedLine = String.format("< %-" + maxLength + "s >", line);
+            String paddedLine = String.format("< %" + "s >", line);
             result.append(paddedLine + "\n");
         }
 
@@ -38,7 +38,7 @@ public class CowSay {
         result.append("         \\  (oo)\\_______\n");
         result.append("            (__)\\       )\\/\\\n");
         result.append("                ||----w |\n");
-        result.append("                ||     ||\n");
+        result.append("                ||     ||");
 
         return result.toString();
     }

@@ -38,7 +38,7 @@ public class CowSayTest {
     public void testCowSayMultilineMessage() {
         String multilineMessage = "Hello,\nWorld!";
         String result = CowSay.cowSay(multilineMessage);
-        String expected = " _______\n< Hello,\n World! >\n ---------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||";
+        String expected = " _______\n< Hello, >\n< World! >\n ---------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||";
         assertEquals(expected, result);
     }
 }
